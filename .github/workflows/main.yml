@@ -333,7 +333,7 @@ jobs:
              west_snippet="-S ${{ matrix.snippet }}"
            else
              west_snippet=""
-          wefi
+          fi
           cd "${GITHUB_WORKSPACE}/zmk/app"
           {
             west $west_debug build -b ${{ matrix.board }} $west_snippet $west_build_debug -- ${{ steps.main.outputs.shield_arg }} ${{ steps.main.outputs.modules_arg }} -DZMK_CONFIG="${GITHUB_WORKSPACE}/miryoku_zmk/config" ||
